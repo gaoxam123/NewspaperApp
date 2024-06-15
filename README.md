@@ -1,2 +1,2 @@
-# NewspaperApp
-Personal implemented application for reading newspapers in multiple languagues
+# CandiesApp
+Personal implemented application for browsing and purchasing confections
