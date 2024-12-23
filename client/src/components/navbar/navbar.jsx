@@ -7,8 +7,10 @@ import Sidebar from "../sidebar/sidebar"
 
 export default function Navbar() {
     const [sidebar, setSidebar] = useState(false)
+    const [closeSidebarWindow, setCloseSidebarWindow] = useState(false)
     function handleClick() {
         setSidebar(prev => !prev)
+        setCloseSidebarWindow(true)
     }
     return (
         <>
@@ -49,8 +51,8 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-            <div className={"overlay " + (sidebar ? "active" : null)}></div>
-            <Sidebar active={sidebar} toggle={handleClick} />
+            <div onMouseEnter={() => {setCloseSidebarWindow(true)}} onMouseLeave={() => {setCloseSidebarWindow(false)}} onClick={handleClick} className={"overlay " + (sidebar ? "active" : null)}></div>
+            <Sidebar closeSidebarWindow={closeSidebarWindow} active={sidebar} toggle={handleClick} />
         </>
     )
 }
