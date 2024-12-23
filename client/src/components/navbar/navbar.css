@@ -1,5 +1,6 @@
 .navbar-container {
-    background-color: lightblue;
+    background-color: #acdee7;
+    padding-left: 7%;
 }
 
 .upper {
@@ -7,12 +8,15 @@
     justify-content: space-around;
     align-items: center;
     margin: 0px 5em 0px 5em;
+    width: 80%;
 }
 
 .lower {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     margin: 0px 5em 0px 5em;
+    width: 80%;
 }
 
 .category-list {
@@ -20,6 +24,12 @@
     justify-content: space-around;
     list-style-type: none;
     align-items: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    transition: all 0.2s;
+    white-space: nowrap;
+    position: relative;
 }
 
 .category-list li {
@@ -78,13 +88,20 @@
 .search-nearby-store {
     .custom-button {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        .bigger {
-            font-size: 20px;
-        }
-        .smaller {
-            font-size: 10px;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        .button-content {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            .bigger {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .smaller {
+                font-size: 12px;
+            }
         }
     }
 }
@@ -102,4 +119,26 @@
 
 .overlay.active {
     display: block;
+}
+
+.user-icon, .wish-list {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+} 
+
+.icon-button {
+    background-color: #ffffff;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.navbar-menu {
+    display: flex;
+    width: 100%;
 }
