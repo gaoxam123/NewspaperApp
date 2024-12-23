@@ -3,7 +3,7 @@ import Layout from "../../components/layout";
 
 const Homepage = () => {
   return (
-    <h1>This is homepage</h1>
+    <h1>Khó vãi lồn</h1>
   )
 }
 
