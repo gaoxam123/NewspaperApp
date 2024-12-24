@@ -3,10 +3,10 @@ import { Search, ShoppingCart, Menu } from "@mui/icons-material"
 import PermIdentityIcon from '@mui/icons-material/PermIdentity'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
-import { Avatar, IconButton, Button } from "@mui/material"
+import { IconButton, Button } from "@mui/material"
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import Sidebar from "../sidebar/sidebar"
+import MenuSidebar from "../sidebar/menu/menusidebar"
 
 export default function Navbar() {
   const [sidebar, setSidebar] = useState(false)
@@ -66,7 +66,7 @@ export default function Navbar() {
         </div>
       </div>
       <div onMouseEnter={() => {setCloseSidebarWindow(true)}} onMouseLeave={() => {setCloseSidebarWindow(false)}} onClick={handleClick} className={"overlay " + (sidebar ? "active" : null)}></div>
-      <Sidebar closeSidebarWindow={closeSidebarWindow} active={sidebar} toggle={handleClick} />
+      <MenuSidebar closeSidebarWindow={closeSidebarWindow} active={sidebar} toggle={handleClick} />
     </>
   )
 }
