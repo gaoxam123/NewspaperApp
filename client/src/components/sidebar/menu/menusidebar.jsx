@@ -7,19 +7,19 @@ import { Button } from "@mui/material"
 import { useState } from "react"
 import SidebarWindow from "./menusidebarwindow"
 
-function MenuSidebar({ active, toggle, closeSidebarWindow }) {
-    const [sidebarWindowVisible, setSidebarWindowVisible] = useState(false)
+function MenuSidebar({ active, toggle, onOutlay }) {
+    const [onMenuSidebar, setOnMenuSidebar] = useState(false)
+    const [onMenuSidebarLink, setOnMenuSidebarLink] = useState(false)
     const [currentButton, setCurrentButton] = useState({
         title: "",
         content: ""
     })
-    const [hover, setHover] = useState(false)
     function handleMouseEnterLi(title, content) {
-        setSidebarWindowVisible(prev => !prev)
         setCurrentButton({ title, content })
+        setOnMenuSidebarLink(prev => !prev)
     }
     return (
-        <div onMouseEnter={() => {setHover(true)}} onMouseLeave={() => {setHover(false)}} className="menu-sidebarcontainer">
+        <div onMouseEnter={() => {setOnMenuSidebar(true)}} onMouseLeave={() => {setOnMenuSidebar(false)}} className="menu-sidebarcontainer">
             <aside className={active ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-menu-items">
                     <li className="navbar-toggle">
@@ -35,7 +35,7 @@ function MenuSidebar({ active, toggle, closeSidebarWindow }) {
                 </ul>
             </aside>
             <div className="sidebarwindow">
-                <SidebarWindow hover={hover} closeSidebarWindow={closeSidebarWindow} visible={sidebarWindowVisible} title={currentButton.title} />
+                <SidebarWindow onMenuSidebarLink={onMenuSidebarLink} onMenuSidebar={onMenuSidebar} onOutlay={onOutlay} title={currentButton.title} />
             </div>
         </div>
     )

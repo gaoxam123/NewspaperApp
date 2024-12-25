@@ -12,10 +12,9 @@ import StoreSidebar from "../sidebar/store/storesidebar"
 
 export default function Navbar() {
   const [menuSidebar, setMenuSidebar] = useState(false)
-    const [closeSidebarWindow, setCloseSidebarWindow] = useState(false)
+  const [onOutlay, setOnOutlay] = useState(false)
   function handleMenuClick() {
     setMenuSidebar(prev => !prev)
-    setCloseSidebarWindow(true)
   }
   const [accountSidebar, setAccountSidebar] = useState(false)
   function handleAccountClick() {
@@ -80,8 +79,8 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div onMouseEnter={() => {setCloseSidebarWindow(true)}} onMouseLeave={() => {setCloseSidebarWindow(false)}} onClick={closeAllSidebars} className={"overlay " + ((menuSidebar || accountSidebar || storeSidebar) ? "active" : null)}></div>
-      <MenuSidebar closeSidebarWindow={closeSidebarWindow} active={menuSidebar} toggle={handleMenuClick} />
+      <div onMouseEnter={() => {setOnOutlay(true)}} onMouseLeave={() => {setOnOutlay(false)}} onClick={closeAllSidebars} className={"overlay " + ((menuSidebar || accountSidebar || storeSidebar) ? "active" : null)}></div>
+      <MenuSidebar onOutlay={onOutlay} active={menuSidebar} toggle={handleMenuClick} />
       <AccountSidebar active={accountSidebar} toggle={handleAccountClick}/>
       <StoreSidebar active={storeSidebar} toggle={handleStoreClick}/>
     </>
