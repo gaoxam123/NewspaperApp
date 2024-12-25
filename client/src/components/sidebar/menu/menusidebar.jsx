@@ -19,7 +19,7 @@ function MenuSidebar({ active, toggle, closeSidebarWindow }) {
         setCurrentButton({ title, content })
     }
     return (
-        <div onMouseEnter={() => {setHover(true)}} onMouseLeave={() => {setHover(false)}} className="sidebarcontainer">
+        <div onMouseEnter={() => {setHover(true)}} onMouseLeave={() => {setHover(false)}} className="menu-sidebarcontainer">
             <aside className={active ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-menu-items">
                     <li className="navbar-toggle">

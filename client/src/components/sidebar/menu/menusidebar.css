@@ -85,6 +85,11 @@ span {
     margin-left: 16px;
 }
 
+.close-button {
+    width: 32px;
+    height: 32px;
+}
+
 .close-button:hover {
     background-color: #1a83ff;
     color: white;

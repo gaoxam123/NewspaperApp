@@ -1,5 +1,5 @@
 import { Home, ShoppingBag, Phone, Info } from "@mui/icons-material"
-export const SidebarData = [
+export const MenuSidebarData = [
     {
         title: "Home",
         path: "/",

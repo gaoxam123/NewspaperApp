@@ -1,0 +1,51 @@
+import "./storesidebar.css"
+import { Link } from "react-router-dom"
+import { Button, IconButton } from "@mui/material"
+import { Close, Cancel, Search } from "@mui/icons-material"
+import StoreAddress from "./storeaddress.jsx"
+
+export default function StoreSidebar({ active, toggle }) {
+    return (
+        <div className="store-sidebarcontainer">
+            <aside className={active ? 'nav-store active' : 'nav-store'}>
+                <div className="title-and-button">
+                    <div className="nav-store-items">
+                        <Link to="#" className="close-link">
+                            <Button className="close-button" onClick={toggle}><Close /></Button>
+                        </Link>
+                    </div>
+                    <div className="title-and-instruction">
+                        <h3>Choose your store</h3>
+                        <p>Please provide your post code to show nearby stores. Through this, you can check the product availability in the market.</p>
+                    </div>
+                </div>
+                <div className="store-content">
+                    <div className="search-area">
+                        <div className="search-input">
+                            <IconButton sx={{ borderTopRightRadius: 0, borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px', borderBottomRightRadius: 0 }} className="icon-button"><Search /></IconButton>
+                            <input placeholder="post code" className="searchInput" />
+                            <IconButton sx={{ borderTopRightRadius: '10px', borderTopLeftRadius: 0, borderBottomLeftRadius: 0, borderBottomRightRadius: '10px' }} className="icon-button"><Cancel /></IconButton>
+                        </div>
+                        <div className="search-button">
+                            <Button>Search</Button>
+                        </div>
+                    </div>
+                    <div className="address-area">
+                        <div className="address-wrapper">
+                            <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
+                        </div>
+                        <div className="address-wrapper">
+                            <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
+                        </div>
+                        <div className="address-wrapper">
+                            <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
+                        </div>
+                        <div className="address-wrapper">
+                            <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    )
+}

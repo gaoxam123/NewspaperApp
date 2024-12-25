@@ -7,13 +7,28 @@ import { IconButton, Button } from "@mui/material"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import MenuSidebar from "../sidebar/menu/menusidebar"
+import AccountSidebar from "../sidebar/account/accountsidebar"
+import StoreSidebar from "../sidebar/store/storesidebar"
 
 export default function Navbar() {
-  const [sidebar, setSidebar] = useState(false)
+  const [menuSidebar, setMenuSidebar] = useState(false)
     const [closeSidebarWindow, setCloseSidebarWindow] = useState(false)
-  function handleClick() {
-    setSidebar(prev => !prev)
+  function handleMenuClick() {
+    setMenuSidebar(prev => !prev)
     setCloseSidebarWindow(true)
+  }
+  const [accountSidebar, setAccountSidebar] = useState(false)
+  function handleAccountClick() {
+    setAccountSidebar(prev => !prev)
+  }
+  const [storeSidebar, setStoreSidebar] = useState(false)
+  function handleStoreClick() {
+    setStoreSidebar(prev => !prev)
+  }
+  function closeAllSidebars() {
+    setAccountSidebar(false)
+    setMenuSidebar(false)
+    setStoreSidebar(false)
   }
   return (
     <>
@@ -29,7 +44,7 @@ export default function Navbar() {
             </div>
           </div>
           <div className="search-nearby-store">
-            <Button className="custom-button">
+            <Button onClick={handleStoreClick} className="custom-button">
               <div className="button-content">
                 <div className="bigger">My Store</div>
                 <div className="smaller">No Store chosen</div>
@@ -38,7 +53,7 @@ export default function Navbar() {
             </Button>
           </div>
           <div className="user-icon">
-            <IconButton><PermIdentityIcon sx={{ fontSize: 35, color: 'black' }} alt="Name" src="" /></IconButton>
+            <IconButton onClick={handleAccountClick}><PermIdentityIcon sx={{ fontSize: 35, color: 'black' }} alt="Name" src="" /></IconButton>
           </div>
           <div className="wish-list">
             <IconButton><ShoppingCart sx={{ fontSize: 35, color: 'black' }} /></IconButton>
@@ -46,7 +61,7 @@ export default function Navbar() {
         </div>
         <div className="lower">
           <div className="navbar-menu">
-            <Button onClick={handleClick}><Menu />Menu</Button>
+            <Button onClick={handleMenuClick}><Menu />Menu</Button>
             <ul className="category-list">
               <li><Link className="navbar-link">Category A</Link></li>
               <li><Link className="navbar-link">Category A</Link></li>
@@ -65,8 +80,10 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div onMouseEnter={() => {setCloseSidebarWindow(true)}} onMouseLeave={() => {setCloseSidebarWindow(false)}} onClick={handleClick} className={"overlay " + (sidebar ? "active" : null)}></div>
-      <MenuSidebar closeSidebarWindow={closeSidebarWindow} active={sidebar} toggle={handleClick} />
+      <div onMouseEnter={() => {setCloseSidebarWindow(true)}} onMouseLeave={() => {setCloseSidebarWindow(false)}} onClick={closeAllSidebars} className={"overlay " + ((menuSidebar || accountSidebar || storeSidebar) ? "active" : null)}></div>
+      <MenuSidebar closeSidebarWindow={closeSidebarWindow} active={menuSidebar} toggle={handleMenuClick} />
+      <AccountSidebar active={accountSidebar} toggle={handleAccountClick}/>
+      <StoreSidebar active={storeSidebar} toggle={handleStoreClick}/>
     </>
   )
 }
