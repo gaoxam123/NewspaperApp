@@ -4,10 +4,12 @@
     left: calc(100vw);
     width: 700px;
     border-radius: 20px;
-    height: 100vh;
+    height: 90vh;
     background-color: white;
     color: black;
     transition: 1s;
+    display: flex;
+    flex-direction: column;
 }
 
 .title-and-button {
@@ -70,12 +72,31 @@ h3 {
 }
 
 .address-area {
-    margin-right: 40px;
+    margin-right: 50px;
+    overflow-y: scroll;
+    height: 60vh;
 }
 
-.address-wrapper {
-    border: 1.5px solid black !important;
-    border-radius: 10px;
-    margin-right: 35px;
-    padding: 10px;
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+}
+
+.store-sidebar-hr {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-right: 95px;
+}
+
+.select-button {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 95px;
 }

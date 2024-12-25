@@ -31,18 +31,16 @@ export default function StoreSidebar({ active, toggle }) {
                         </div>
                     </div>
                     <div className="address-area">
-                        <div className="address-wrapper">
-                            <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
-                        </div>
-                        <div className="address-wrapper">
-                            <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
-                        </div>
-                        <div className="address-wrapper">
-                            <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
-                        </div>
-                        <div className="address-wrapper">
-                            <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
-                        </div>
+                        <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
+                        <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
+                        <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
+                        <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
+                        <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
+                        <StoreAddress title="Media Markt" address="Tal 19 - 80331 Munich" isOpen={true} />
+                    </div>
+                    <hr className="store-sidebar-hr"/>
+                    <div className="select-button">
+                        <Button>Choose Store</Button>
                     </div>
                 </div>
             </aside>
