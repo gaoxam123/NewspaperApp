@@ -7,7 +7,7 @@ import { Button } from "@mui/material"
 import { useState } from "react"
 import SidebarWindow from "./menusidebarwindow"
 
-function MenuSidebar({ active, toggle }) {
+function MenuSidebar({ active, toggle, menuSidebar }) {
     const [onMenuSidebarLink, setOnMenuSidebarLink] = useState(false)
     const [currentButton, setCurrentButton] = useState({
         title: "",
@@ -18,7 +18,7 @@ function MenuSidebar({ active, toggle }) {
         setOnMenuSidebarLink(prev => !prev)
     }
     return (
-        <div onMouseEnter={() => {setOnMenuSidebar(true)}} onMouseLeave={() => {setOnMenuSidebar(false)}} className="menu-sidebarcontainer">
+        <div className="menu-sidebarcontainer">
             <aside className={active ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-menu-items">
                     <li className="navbar-toggle">
@@ -34,7 +34,7 @@ function MenuSidebar({ active, toggle }) {
                 </ul>
             </aside>
             <div className="sidebarwindow">
-                <SidebarWindow onMenuSidebarLink={onMenuSidebarLink} title={currentButton.title} />
+                <SidebarWindow onMenuSidebarLink={onMenuSidebarLink} title={currentButton.title} menuSidebar={menuSidebar} />
             </div>
         </div>
     )

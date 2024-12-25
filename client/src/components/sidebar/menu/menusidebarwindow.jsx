@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react"
 import "./menusidebarwindow.css"
-export default function SidebarWindow({ title, onMenuSidebarLink }) {
+export default function SidebarWindow({ title, onMenuSidebarLink, menuSidebar }) {
     const [onMenuSidebarWindow, setOnMenuSidebarWindow] = useState(false)
     const [onceEnter, setOnceEnter] = useState(false)
     useEffect(() => {
-        setOnMenuSidebarWindow(true)
-    }, [onMenuSidebarLink])
+        if (onMenuSidebarLink && menuSidebar) {
+            setOnMenuSidebarWindow(true)
+        }
+        else if(!menuSidebar) {
+            setOnMenuSidebarWindow(false)
+        }
+    }, [onMenuSidebarLink, menuSidebar])
     const handleEnter = () => {
         setOnceEnter(true)
         setOnMenuSidebarWindow(true)
