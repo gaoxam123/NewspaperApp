@@ -23,5 +23,65 @@ export const MenuSidebarData = [
         path: "/",
         icon: <Info/>,
         cName: 'nav-text'
-    }
+    },
+    {
+        title: "About us",
+        path: "/",
+        icon: <Info/>,
+        cName: 'nav-text'
+    },
+    {
+        title: "About us",
+        path: "/",
+        icon: <Info/>,
+        cName: 'nav-text'
+    },
+    {
+        title: "About us",
+        path: "/",
+        icon: <Info/>,
+        cName: 'nav-text'
+    },
+    {
+        title: "About us",
+        path: "/",
+        icon: <Info/>,
+        cName: 'nav-text'
+    },
+    {
+        title: "About us",
+        path: "/",
+        icon: <Info/>,
+        cName: 'nav-text'
+    },
+    {
+        title: "About us",
+        path: "/",
+        icon: <Info/>,
+        cName: 'nav-text'
+    },
+    {
+        title: "About us",
+        path: "/",
+        icon: <Info/>,
+        cName: 'nav-text'
+    },
+    {
+        title: "About us",
+        path: "/",
+        icon: <Info/>,
+        cName: 'nav-text'
+    },
+    {
+        title: "About us",
+        path: "/",
+        icon: <Info/>,
+        cName: 'nav-text'
+    },
+    {
+        title: "About us",
+        path: "/",
+        icon: <Info/>,
+        cName: 'nav-text'
+    },
 ]
