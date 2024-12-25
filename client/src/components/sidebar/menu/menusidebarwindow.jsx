@@ -1,11 +1,25 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./menusidebarwindow.css"
-export default function SidebarWindow({ title, onOutlay, onMenuSidebar, onMenuSidebarLink }) {
+export default function SidebarWindow({ title, onMenuSidebarLink }) {
     const [onMenuSidebarWindow, setOnMenuSidebarWindow] = useState(false)
+    const [onceEnter, setOnceEnter] = useState(false)
+    useEffect(() => {
+        setOnMenuSidebarWindow(true)
+    }, [onMenuSidebarLink])
+    const handleEnter = () => {
+        setOnceEnter(true)
+        setOnMenuSidebarWindow(true)
+    }
+    const handleLeave = () => {
+        if (onceEnter) {
+            setOnMenuSidebarWindow(false)
+            setOnceEnter(false)
+        }
+    }
     return (
         <>
-            {(onMenuSidebarLink || onMenuSidebarWindow) && (
-                <div onMouseEnter={() => {setOnMenuSidebarWindow(true)}} onMouseLeave={() => {setOnMenuSidebarWindow(false)}} className="popup">
+            {(onMenuSidebarWindow) && (
+                <div onMouseEnter={handleEnter} onMouseLeave={handleLeave} className="popup">
                     <h2>{title}</h2>
                     <ul>
                         <li>Product 1</li>
