@@ -40,7 +40,7 @@ export default function StoreSidebar({ active, toggle }) {
                     </div>
                     <hr className="store-sidebar-hr"/>
                     <div className="select-button">
-                        <Button>Choose Store</Button>
+                        <Button variant="contained" color="info">Choose Store</Button>
                     </div>
                 </div>
             </aside>

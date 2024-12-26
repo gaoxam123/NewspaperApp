@@ -1,7 +1,8 @@
 import "./AccountSidebar.css"
 import { Link } from "react-router-dom"
-import { Button } from "@mui/material"
+import CustomButton from "../../customButton/CustomButton"
 import { Close, FavoriteBorder, HouseOutlined, ShoppingCartCheckout, Person2Outlined } from "@mui/icons-material"
+import { Button } from "@mui/material"
 
 export default function AccountSidebar({ active, toggle }) {
     return (
@@ -15,10 +16,10 @@ export default function AccountSidebar({ active, toggle }) {
                     </li>
                     <li className="account-buttons">
                         <Link to="/login">
-                            <Button className="account-item-button">Login</Button>
+                            <CustomButton className="account-item-button">Login</CustomButton>
                         </Link>
                         <Link to="/register">
-                            <Button className="account-item-button">Register</Button>
+                            <CustomButton className="account-item-button">Register</CustomButton>
                         </Link>
                     </li>
                     <li className="account-item">

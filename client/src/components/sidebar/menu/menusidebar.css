@@ -4,7 +4,8 @@
     top: 0;
     left: -300px;
     width: 300px;
-    border-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     height: 100vh;
     background-color: white;
     color: black;
@@ -32,7 +33,7 @@
 } */
 
 .nav-menu.active {
-    left: -20px;
+    left: 0;
     transition: 0.65s;
 }
 
@@ -42,16 +43,13 @@
 }
 
 .navbar-toggle {
-    /* background-color: white;
-    width: 100%;
-    height: 80px; */
     display: flex;
     justify-content: start;
     align-items: center;
 }
 
 .nav-text {
-    padding: 8px 0px 8px 32px;
+    padding: 8px 0px 8px 16px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -60,7 +58,7 @@
 }
 
 .menu-bars {
-    margin-left: 2rem;
+    margin-left: 1rem;
     font-size: 2rem;
     background: none;
 }

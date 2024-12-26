@@ -2,8 +2,9 @@
     position: fixed;
     top: 0;
     left: calc(100vw);
-    width: 700px;
-    border-radius: 20px;
+    width: 650px;
+    border-top-left-radius: 20px;
+    border-top-left-radius: 20px;
     height: 90vh;
     background-color: white;
     color: black;
@@ -27,6 +28,8 @@
     list-style-type: none;
     flex: 2;
     margin-top: 10px;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .title-and-instruction {
@@ -49,7 +52,6 @@ h3 {
         border-radius: 10px;
         display: flex;
         border: 2px solid black;
-        margin-right: 20px;
         input {
             border: none;
             outline: none;
@@ -72,7 +74,6 @@ h3 {
 }
 
 .address-area {
-    margin-right: 50px;
     overflow-y: scroll;
     height: 60vh;
 }
@@ -92,11 +93,20 @@ h3 {
 .store-sidebar-hr {
     margin-top: 25px;
     margin-bottom: 15px;
-    margin-right: 95px;
+    margin-right: 45px;
 }
 
 .select-button {
     display: flex;
     flex-direction: row-reverse;
-    margin-right: 95px;
+    margin-right: 45px;
+}
+
+.search-button {
+    margin-left: 20px;
+}
+
+.search-button:hover {
+    background-color: lightblue;
+    color: white;
 }

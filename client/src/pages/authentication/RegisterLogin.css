@@ -53,3 +53,9 @@ img {
 .to-login {
     margin-top: 10px;
 }
+
+.link-and-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
