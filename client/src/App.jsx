@@ -4,6 +4,7 @@ import Homepage from './pages/homepage/Homepage'
 import ListProducts from './pages/listProducts/ListProducts'
 import Layout from './components/layout/Layout'
 import RegisterLogin from './pages/authentication/RegisterLogin'
+import Auth from './components/auth/Auth'
 
 const router = createBrowserRouter([
   {
@@ -21,13 +22,19 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: "/register",
-    element: <RegisterLogin login={false} />
+    path: "/",
+    element: <Auth />,
+    children: [
+      {
+        path: "/register",
+        element: <RegisterLogin login={false} />
+      },
+      {
+        path: "/login",
+        element: <RegisterLogin login={true}/>
+      }
+    ]
   },
-  {
-    path: "/login",
-    element: <RegisterLogin login={true}/>
-  }
 ]);
 
 function App() {
