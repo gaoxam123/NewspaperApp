@@ -1,4 +1,4 @@
-import "./storeaddress.css"
+import "./StoreAddress.css"
 import { useState } from "react"
 
 export default function StoreAddress({ title, address, isOpen }) {

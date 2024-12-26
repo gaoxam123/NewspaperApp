@@ -1,8 +1,9 @@
 import { Route, Routes, Navigate, BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
-import Homepage from './pages/homepage'
-import ListProducts from './pages/listProducts'
-import Layout from './components/layout'
+import Homepage from './pages/homepage/Homepage'
+import ListProducts from './pages/listProducts/ListProducts'
+import Layout from './components/layout/Layout'
+import RegisterLogin from './pages/authentication/RegisterLogin'
 
 const router = createBrowserRouter([
   {
@@ -19,14 +20,14 @@ const router = createBrowserRouter([
       },
     ]
   },
-  // {
-  //   path: "/register",
-  //   element: <Register/>
-  // },
-  // {
-  //   path: "/login",
-  //   element: <Login/>
-  // }
+  {
+    path: "/register",
+    element: <RegisterLogin login={false} />
+  },
+  {
+    path: "/login",
+    element: <RegisterLogin login={true}/>
+  }
 ]);
 
 function App() {

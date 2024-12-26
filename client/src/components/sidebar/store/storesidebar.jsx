@@ -1,8 +1,8 @@
-import "./storesidebar.css"
+import "./StoreSidebar.css"
 import { Link } from "react-router-dom"
 import { Button, IconButton } from "@mui/material"
 import { Close, Cancel, Search } from "@mui/icons-material"
-import StoreAddress from "./storeaddress.jsx"
+import StoreAddress from "./StoreAddress.jsx"
 
 export default function StoreSidebar({ active, toggle }) {
     return (

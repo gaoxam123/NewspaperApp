@@ -1,0 +1,55 @@
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #acdee7;
+    border-radius: 10px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.img-container {
+    width: 500px;
+    height: 350px;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.form-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forgot-password {
+    margin-top: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    input {
+        height: 2em;
+        width: 25em;
+    }
+    margin-bottom: 10px;
+}
+
+.to-login {
+    margin-top: 10px;
+}

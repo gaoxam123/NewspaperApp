@@ -1,6 +1,8 @@
 .navbar-container {
     background-color: #acdee7;
     padding-left: 7%;
+    position: sticky;
+    top: 0;
 }
 
 .upper {

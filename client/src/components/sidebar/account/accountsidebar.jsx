@@ -1,4 +1,4 @@
-import "./accountsidebar.css"
+import "./AccountSidebar.css"
 import { Link } from "react-router-dom"
 import { Button } from "@mui/material"
 import { Close, FavoriteBorder, HouseOutlined, ShoppingCartCheckout, Person2Outlined } from "@mui/icons-material"
@@ -14,10 +14,10 @@ export default function AccountSidebar({ active, toggle }) {
                         </Link>
                     </li>
                     <li className="account-buttons">
-                        <Link to="#">
+                        <Link to="/login">
                             <Button className="account-item-button">Login</Button>
                         </Link>
-                        <Link to="#">
+                        <Link to="/register">
                             <Button className="account-item-button">Register</Button>
                         </Link>
                     </li>

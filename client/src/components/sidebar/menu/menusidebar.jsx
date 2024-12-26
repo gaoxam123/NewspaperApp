@@ -1,11 +1,11 @@
-import "./menusidebar.css"
+import "./MenuSidebar.css"
 import React from 'react'
 import { Close } from "@mui/icons-material"
 import { Link } from "react-router-dom"
-import { MenuSidebarData } from "./menusidebardata"
+import { MenuSidebarData } from "./MenuSidebarData"
 import { Button } from "@mui/material"
 import { useState } from "react"
-import SidebarWindow from "./menusidebarwindow"
+import SidebarWindow from "./MenuSidebarWindow"
 
 function MenuSidebar({ active, toggle, menuSidebar }) {
     const [onMenuSidebarLink, setOnMenuSidebarLink] = useState(false)

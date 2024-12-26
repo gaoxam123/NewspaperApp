@@ -1,4 +1,4 @@
-import "./navbar.css"
+import "./Navbar.css"
 import { Search, ShoppingCart, Menu } from "@mui/icons-material"
 import PermIdentityIcon from '@mui/icons-material/PermIdentity'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
@@ -6,9 +6,9 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import { IconButton, Button } from "@mui/material"
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import MenuSidebar from "../sidebar/menu/menusidebar"
-import AccountSidebar from "../sidebar/account/accountsidebar"
-import StoreSidebar from "../sidebar/store/storesidebar"
+import MenuSidebar from "../sidebar/menu/MenuSidebar"
+import AccountSidebar from "../sidebar/account/AccountSidebar"
+import StoreSidebar from "../sidebar/store/StoreSidebar"
 
 export default function Navbar() {
   const [menuSidebar, setMenuSidebar] = useState(false)
