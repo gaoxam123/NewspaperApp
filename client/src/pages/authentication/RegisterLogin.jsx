@@ -1,64 +1,55 @@
 import "./RegisterLogin.css"
 import { Link } from "react-router-dom"
 import { PermIdentity, Password, Email } from "@mui/icons-material"
-import { useRef, useState } from "react"
+import Input from "./Input"
+import { isEmail, isNotEmpty, hasMinLength } from "../../utils/validation"
+import { useInput } from "../../hooks/useInput"
 
 export default function Register({ login }) {
-    const [emailIsInvalid, setEmailIsInvalid] = useState(false)
-    const [passwordIsInvalid, setPasswordIsInvalid] = useState(false)
-    const [usernameIsInvalid, setUsernameIsInvalid] = useState(false)
-    const username = useRef()
-    const password = useRef()
-    const email = useRef()
+    const {
+        value: enteredUsername, 
+        handleValueChange: handleUsernameChange,
+        handleValueBlur: handleUsernameBlur,
+        hasError: usernameInvalid,
+        setEnteredValue: setEnteredUsername,
+        setDidEditValue: setDidEditUsername 
+    } = useInput('', isNotEmpty)
+
+    const {
+        value: enteredPassword, 
+        handleValueChange: handlePasswordChange,
+        handleValueBlur: handlePasswordBlur,
+        hasError: passwordInvalid ,
+        setEnteredValue: setEnteredPassword,
+        setDidEditValue: setDidEditPassword 
+    } = useInput('', (v) => hasMinLength(v, 8))
+
+    const {
+        value: enteredEmail, 
+        handleValueChange: handleEmailChange,
+        handleValueBlur: handleEmailBlur,
+        hasError: emailInvalid,
+        setEnteredValue: setEnteredEmail,
+        setDidEditValue: setDidEditEmail 
+    } = useInput('', isEmail)
+
+    const handleReset = () => {
+        setEnteredEmail('')
+        setEnteredPassword('')
+        setEnteredUsername('')
+        setDidEditEmail(false)
+        setDidEditPassword(false)
+        setDidEditUsername(false)
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault()
-        const enteredUsername = username.current.value
-        const enteredPassword = password.current.value
-        const enteredEmail = email.current.value
 
-        const emailIsValid = enteredEmail.includes('@')
-        const passwordIsValid = enteredPassword.length >= 8
-        const usernameIsValid = enteredUsername.length > 0
-
-        let check = true
-
-        if (!usernameIsValid) {
-            setUsernameIsInvalid(true)
-            check = false
-        }
-        else {
-            setUsernameIsInvalid(false)
-        }
-
-        if (!emailIsValid) {
-            setEmailIsInvalid(true)
-            check = false
-        }
-        else {
-            setEmailIsInvalid(false)
-        }
-
-        if (!passwordIsValid) {
-            setPasswordIsInvalid(true)
-            check = false
-        }
-        else {
-            setPasswordIsInvalid(false)
-        }
-
-        if (!check) {
+        if (usernameInvalid || passwordInvalid || emailInvalid) {
             return
         }
     }
 
-    const handleReset = () => {
-        username.current.value = ""
-        password.current.value = ""
-        email.current.value = ""
-        setUsernameIsInvalid(false)
-        setPasswordIsInvalid(false)
-        setEmailIsInvalid(false)
-    }
     return (
         <div className="container">
             <div className="img-container">
@@ -67,27 +58,34 @@ export default function Register({ login }) {
             <div className="text"><h2>{login ? "Login" : "Sign Up"}</h2></div>
             <div className="form-container">
                 <form onSubmit={handleSubmit} action="" className="form">
-                    <div className="input-container">
-                        <div className="input-wrapper">
-                            <label htmlFor="username"><PermIdentity /></label>
-                            <input type="text" className="username" id="username" name="username" ref={username} />
-                        </div>
-                        <div className="control-error">{usernameIsInvalid && <p>Username is required</p>}</div>
-                    </div>
-                    <div className="input-container">
-                        <div className="input-wrapper">
-                            <label htmlFor="password"><Password /></label>
-                            <input type="password" className="password" id="password" name="password" ref={password} />
-                        </div>
-                        <div className="control-error">{passwordIsInvalid && <p>Password must contain at least 8 characters</p>}</div>
-                    </div>
-                    {!login && <div className="input-container">
-                        <div className="input-wrapper">
-                            <label htmlFor="email"><Email /></label>
-                            <input type="text" className="email" id="email" name="email" ref={email} />
-                        </div>
-                        <div className="control-error">{emailIsInvalid && <p>Invalid email</p>}</div>
-                    </div>}
+                    <Input type="text"
+                        className="username"
+                        id="username"
+                        name="username"
+                        onChange={handleUsernameChange}
+                        value={enteredUsername}
+                        icon={<PermIdentity />}
+                        error={usernameInvalid && "Username is required"}
+                        onBlur={handleUsernameBlur} />
+                    <Input type="password"
+                        className="password"
+                        id="password"
+                        name="password"
+                        onChange={handlePasswordChange}
+                        value={enteredPassword}
+                        icon={<Password />}
+                        error={passwordInvalid && "Password must contain at least 8 characters"}
+                        onBlur={handlePasswordBlur} />
+                    {!login &&
+                        <Input type="email"
+                            className="email"
+                            id="email"
+                            name="email"
+                            onChange={handleEmailChange}
+                            value={enteredEmail}
+                            icon={<Email />}
+                            error={emailInvalid && "Invalid email"}
+                            onBlur={handleEmailBlur} />}
                     <div className="link-and-button">
                         {!login ? <div className="to-login"><span><Link to="/login">Already have an account?</Link></span></div> :
                             <div className="to-login"><span><Link to="/register">No account yet?</Link></span></div>}
