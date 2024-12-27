@@ -1,29 +1,11 @@
 import React from "react";
+import classes from "./Homepage.module.css"
+import SlidingOffers from "../../components/slidingOffers/SlidingOffers";
 
 const Homepage = () => {
   return (
     <>
-       <div className="sliding-offers">
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-          <h1>abc</h1>
-       </div>
+      <SlidingOffers />
     </>
   )
 }
