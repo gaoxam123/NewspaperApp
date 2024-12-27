@@ -3,3 +3,15 @@
     flex-direction: column;
     height: 100vh;
 }
+
+.auth-header {
+    flex: 2;
+}
+
+.auth-content {
+    flex: 9;
+}
+
+.auth-footer {
+    flex: 1;
+}

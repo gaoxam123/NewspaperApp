@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import AuthHeader from "./authHeader/AuthHeader";
 import AuthFooter from "./authFooter/AuthFooter";
+import "./Auth.css"
 
 const Auth = () => {
   return (
