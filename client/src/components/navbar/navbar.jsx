@@ -79,9 +79,9 @@ export default function Navbar() {
         </div>
       </div>
       <div onClick={closeAllSidebars} className={"overlay " + ((menuSidebar || accountSidebar || storeSidebar) ? "active" : null)}></div>
-      <MenuSidebar active={menuSidebar} toggle={handleMenuClick} menuSidebar={menuSidebar}/>
-      <AccountSidebar active={accountSidebar} toggle={handleAccountClick}/>
-      <StoreSidebar active={storeSidebar} toggle={handleStoreClick}/>
+      <MenuSidebar active={menuSidebar} toggle={handleMenuClick} menuSidebar={menuSidebar} />
+      <AccountSidebar active={accountSidebar} toggle={handleAccountClick} />
+      <StoreSidebar active={storeSidebar} toggle={handleStoreClick} />
     </>
   )
 }

@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    width: 30%;
+    height: 100%;
+}
+
+.imgDiv {
+    flex: 4.5;
+    height: 40%;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+
+.description {
+    flex: 5.5;
+}
+
+.button {
+    display: flex;
+    flex-direction: row-reverse;
+    flex: 2;
+    align-items: center;
+    button {
+        height: 50%;
+        margin-right: 2.5%;
+    }
+}
