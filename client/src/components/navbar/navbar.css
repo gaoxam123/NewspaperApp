@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 0px 5em 0px 5em;
+    margin: 0px 5em 0px 6em;
     width: 80%;
 }
 
@@ -26,12 +26,18 @@
     justify-content: space-around;
     list-style-type: none;
     align-items: center;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: none;
     transition: all 0.2s;
     white-space: nowrap;
     position: relative;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+}
+
+.category-list::-webkit-scrollbar {
+    display: none;
 }
 
 .category-list li {
@@ -143,4 +149,7 @@
 .navbar-menu {
     display: flex;
     width: 100%;
+    overflow: hidden;
 }
+
+

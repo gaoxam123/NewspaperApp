@@ -3,14 +3,41 @@ import { Search, ShoppingCart, Menu } from "@mui/icons-material"
 import PermIdentityIcon from '@mui/icons-material/PermIdentity'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
 import { IconButton, Button } from "@mui/material"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Link } from "react-router-dom"
 import MenuSidebar from "../sidebar/menu/MenuSidebar"
 import AccountSidebar from "../sidebar/account/AccountSidebar"
 import StoreSidebar from "../sidebar/store/StoreSidebar"
 
 export default function Navbar() {
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(false);
+
+  const listRef = useRef(null);
+
+  const handleScrollRight = () => {
+    if (listRef.current) {
+      listRef.current.scrollLeft += 100; // Cuộn sang phải 100px
+    }
+  };
+
+  const handleScrollLeft = () => {
+    if (listRef.current) {
+      listRef.current.scrollLeft -= 100; // Cuộn sang phải 100px
+    }
+  };
+
+  const handleScroll = () => {
+    if (listRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = listRef.current;
+      console.log({ scrollLeft, scrollWidth, clientWidth });
+      setShowLeftArrow(listRef.current.scrollLeft > 0);
+      setShowRightArrow(listRef.current.scrollLeft + listRef.current.clientWidth < listRef.current.scrollWidth - 1);
+    }
+  }
+
   const [menuSidebar, setMenuSidebar] = useState(false)
   function handleMenuClick() {
     setMenuSidebar(prev => !prev)
@@ -58,9 +85,15 @@ export default function Navbar() {
           </div>
         </div>
         <div className="lower">
+          <Button onClick={handleMenuClick}><Menu />Menu</Button>
+          {showLeftArrow && (<div className="arrow-button">
+            <IconButton onClick={handleScrollLeft}>
+              <KeyboardArrowLeftIcon sx={{ color: 'white' }} />
+            </IconButton>
+          </div>)
+          }
           <div className="navbar-menu">
-            <Button onClick={handleMenuClick}><Menu />Menu</Button>
-            <ul className="category-list">
+            <ul className="category-list" ref={listRef} onScroll={handleScroll}>
               <li><Link className="navbar-link">Category A</Link></li>
               <li><Link className="navbar-link">Category A</Link></li>
               <li><Link className="navbar-link">Category A</Link></li>
@@ -73,9 +106,13 @@ export default function Navbar() {
               <li><Link className="navbar-link">Category A</Link></li>
             </ul>
           </div>
-          <div className="arrow-button">
-            <IconButton><KeyboardArrowRightIcon sx={{ color: 'white' }} /></IconButton>
-          </div>
+          {showRightArrow && (
+            <div className="arrow-button">
+              <IconButton onClick={handleScrollRight} sx={{ display: showRightArrow ? 'flex' : 'hidden' }}>
+                <KeyboardArrowRightIcon sx={{ color: 'white' }} />
+              </IconButton>
+            </div>
+          )}
         </div>
       </div>
       <div onClick={closeAllSidebars} className={"overlay " + ((menuSidebar || accountSidebar || storeSidebar) ? "active" : null)}></div>
