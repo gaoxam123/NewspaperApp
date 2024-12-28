@@ -1,0 +1,64 @@
+.container {
+    margin-top: 2.5%;
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    overflow: hidden;
+}
+
+.topProducts {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.sliderTrack {
+    display: flex;
+    gap: 10px;
+    /* Gap between the products */
+    transition: transform 1s ease;
+    /* Smooth sliding effect */
+    width: calc(100% * (30 / 5) + 10px * 29);
+    /* Total width for all items and gaps */
+}
+
+.sliderTrack>* {
+    flex: 1 0 calc((100% - 40px) / 5);
+    /* Adjust for visible items and gaps */
+    box-sizing: border-box;
+    /* Include padding and borders */
+}
+
+.titleAndButtons {
+    display: flex;
+    height: 20%;
+}
+
+.title {
+    flex: 6;
+    display: flex;
+    align-items: center;
+}
+
+.buttons {
+    flex: 6;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttons button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buttons button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

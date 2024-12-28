@@ -1,40 +1,38 @@
 .slidingOffers {
-    margin-top: 2.5%;
-    width: 80%;
-    height: 70%;
-    margin-left: 10%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; /* Hide overflowing content */
-  }
-  
-  .contentWrapper {
-    display: flex;
-    overflow: hidden; /* Ensure only visible offers are shown */
-    width: 100%;
-    height: 100%;
-  }
-  
-  .sliderTrack {
-    display: flex;
-    gap: 20px; /* Add space between offers */
-    transition: transform 1s ease; /* Smooth sliding */
-    width: calc(100% * 6 / 3); /* Adjust width dynamically: totalOffers / visibleOffers */
-    box-sizing: border-box; /* Ensure spacing is included in layout calculations */
-  }
-  
-  .sliderTrack > * {
-    flex: 1 0 calc((100% - 40px) / 3); /* Adjust for 3 visible offers minus the gaps */
-    box-sizing: border-box;
-  }
-  
-  .buttonWrapper {
-    margin-top: 1%;
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  
-  .twoButtons button {
-    margin: 0 5px;
-  }
-  
+  margin-top: 2.5%;
+  width: 80%;
+  height: 500px;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.contentWrapper {
+  display: flex;
+  overflow: hidden; /* Ensure only visible offers are shown */
+  width: 100%;
+  height: 100%;
+}
+
+.sliderTrack {
+  display: flex;
+  gap: 20px; /* Space between offers */
+  transition: transform 1s ease; /* Smooth sliding */
+  width: calc(100% * (6 / 3) + 20px * 4); /* Adjust for total offers and gaps */
+}
+
+.sliderTrack > * {
+  flex: 1 0 calc((100% - 40px) / 3); /* Adjust for visible offers and total gap */
+  box-sizing: border-box;
+}
+
+.buttonWrapper {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.twoButtons button {
+  margin: 0 5px;
+}

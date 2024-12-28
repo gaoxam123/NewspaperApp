@@ -11,6 +11,7 @@
     transition: 1s;
     display: flex;
     flex-direction: column;
+    z-index: 5;
 }
 
 .title-and-button {

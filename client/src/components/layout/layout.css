@@ -1,22 +1,22 @@
 .layout {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
 }
 
 .layout-content {
     /* overflow-y: scroll; */
-    flex: 9;
+    z-index: 0;
 }
 
 .layout-header {
-    position: sticky;
+    /* position: sticky; */
     top: 0;
-    flex: 2;
+    z-index: 4;
 }
 
 .layout-footer {
-    flex: 1;
+    margin-top: 50px;
 }
 
 /* ::-webkit-scrollbar {
