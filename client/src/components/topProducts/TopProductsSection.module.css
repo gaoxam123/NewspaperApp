@@ -13,24 +13,26 @@
     overflow: hidden;
     width: 100%;
     height: 100%;
-    position: relative;
 }
 
 .sliderTrack {
     display: flex;
-    gap: 10px;
-    /* Gap between the products */
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 30px;
     transition: transform 1s ease;
-    /* Smooth sliding effect */
-    width: calc(100% * (30 / 5) + 10px * 29);
-    /* Total width for all items and gaps */
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    scrollbar-width: none;
 }
 
-.sliderTrack>* {
-    flex: 1 0 calc((100% - 40px) / 5);
-    /* Adjust for visible items and gaps */
+.sliderTrack::-webkit-scrollbar {
+    display: none;
+}
+
+.sliderTrack > * {
+    flex: 1 0 calc((100% - 120px) / 5);
     box-sizing: border-box;
-    /* Include padding and borders */
 }
 
 .titleAndButtons {
@@ -60,5 +62,4 @@
 
 .buttons button:disabled {
     background-color: #ccc;
-    cursor: not-allowed;
 }

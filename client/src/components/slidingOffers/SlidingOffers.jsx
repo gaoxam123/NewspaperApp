@@ -37,7 +37,7 @@ export default function SlidingOffers() {
         <div
           className={classes.sliderTrack}
           style={{
-            transform: `translateX(calc(-${currentIndex * 100}% - ${currentIndex * gap * (visibleOffers - 2)}px))`,
+            transform: `translateX(calc(-${currentIndex * 100}% - ${currentIndex * gap}px))`,
           }}
         >
           <Offer />
