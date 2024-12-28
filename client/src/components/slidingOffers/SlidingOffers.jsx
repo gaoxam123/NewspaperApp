@@ -3,35 +3,33 @@ import Offer from '../offer/Offer';
 import classes from './SlidingOffers.module.css';
 
 export default function SlidingOffers() {
-  const [currentIndex, setCurrentIndex] = useState(0); // Track the current slide
-  const totalOffers = 6; // Total number of offers
-  const visibleOffers = 3; // Number of visible offers at a time
-  const gap = 20; // Gap between offers in pixels
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const totalOffers = 6;
+  const visibleOffers = 3;
+  const gap = 20;
 
-  const timer = setTimeout(() => {
-    if (currentIndex === 0) {
-      handleRightClick()
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (currentIndex === 0) {
+        handleRightClick()
+      }
+      else {
+        handleLeftClick()
+      }
+    }, 5000)
+
+    return () => {
+      clearTimeout(timer)
     }
-    else {
-      handleLeftClick()
-    }
-  }, 5000)
+  }, [currentIndex])
 
   const handleLeftClick = () => {
-    clearTimeout(timer)
-    setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0)); // Move 3 items back
+    setCurrentIndex((prevIndex) => 1 - prevIndex);
   };
 
   const handleRightClick = () => {
-    clearTimeout(timer)
-    setCurrentIndex((prevIndex) =>
-      Math.min(prevIndex + 1, Math.ceil(totalOffers / visibleOffers) - 1) // Move 3 items forward
-    );
+    setCurrentIndex((prevIndex) => 1 - prevIndex);
   };
-
-  useEffect(() => {
-    timer
-  }, [currentIndex])
 
   return (
     <div className={classes.slidingOffers}>
