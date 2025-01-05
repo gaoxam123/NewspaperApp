@@ -7,30 +7,30 @@ import { useInput } from "../../hooks/useInput"
 
 export default function Register({ login }) {
     const {
-        value: enteredUsername, 
+        value: enteredUsername,
         handleValueChange: handleUsernameChange,
         handleValueBlur: handleUsernameBlur,
         hasError: usernameInvalid,
         setEnteredValue: setEnteredUsername,
-        setDidEditValue: setDidEditUsername 
+        setDidEditValue: setDidEditUsername
     } = useInput('', isNotEmpty)
 
     const {
-        value: enteredPassword, 
+        value: enteredPassword,
         handleValueChange: handlePasswordChange,
         handleValueBlur: handlePasswordBlur,
-        hasError: passwordInvalid ,
+        hasError: passwordInvalid,
         setEnteredValue: setEnteredPassword,
-        setDidEditValue: setDidEditPassword 
+        setDidEditValue: setDidEditPassword
     } = useInput('', (v) => hasMinLength(v, 8))
 
     const {
-        value: enteredEmail, 
+        value: enteredEmail,
         handleValueChange: handleEmailChange,
         handleValueBlur: handleEmailBlur,
         hasError: emailInvalid,
         setEnteredValue: setEnteredEmail,
-        setDidEditValue: setDidEditEmail 
+        setDidEditValue: setDidEditEmail
     } = useInput('', isEmail)
 
     const handleReset = () => {
@@ -58,7 +58,9 @@ export default function Register({ login }) {
             <div className="text"><h2>{login ? "Login" : "Sign Up"}</h2></div>
             <div className="form-container">
                 <form onSubmit={handleSubmit} action="" className="form">
-                    <Input type="text"
+                    <Input
+                        componentType="input"
+                        type="text"
                         className="username"
                         id="username"
                         name="username"
@@ -67,7 +69,9 @@ export default function Register({ login }) {
                         icon={<PermIdentity />}
                         error={usernameInvalid && "Username is required"}
                         onBlur={handleUsernameBlur} />
-                    <Input type="password"
+                    <Input
+                        componentType="input"
+                        type="password"
                         className="password"
                         id="password"
                         name="password"
@@ -77,7 +81,9 @@ export default function Register({ login }) {
                         error={passwordInvalid && "Password must contain at least 8 characters"}
                         onBlur={handlePasswordBlur} />
                     {!login &&
-                        <Input type="email"
+                        <Input
+                            componentType="input"
+                            type="email"
                             className="email"
                             id="email"
                             name="email"

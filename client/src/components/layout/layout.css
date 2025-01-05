@@ -16,7 +16,8 @@
 }
 
 .layout-footer {
-    margin-top: 50px;
+    background-color: black;
+    height: 170px;
 }
 
 /* ::-webkit-scrollbar {

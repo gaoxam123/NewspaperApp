@@ -1,0 +1,88 @@
+.sortingAndDropDownWindow {
+    position: relative;
+}
+
+.sorting {
+    border: 2px solid gray;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.textAndOptions {
+    width: 120px;
+}
+
+.text {
+    font-size: 14px;
+}
+
+.options {
+    font-size: 18px;
+}
+
+.sorting:hover {
+    cursor: pointer;
+}
+
+.active {
+    border: 2px solid lightblue;
+}
+
+.inactive {
+    border: 2px solid gray;
+}
+
+.inactive:hover {
+    border: 2px solid black;
+}
+
+.dropDownWindow {
+    /* position: relative; */
+    /* top: 10px; */
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0.25s;
+
+    .listOptions {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 5px 2px 10px 2px;
+        font-size: 18px;
+
+        .op {
+            padding-left: 8px;
+        }
+
+        .op:hover {
+            background-color: rgb(234, 231, 231);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chosen {
+            font-weight: bolder;
+        }
+    }
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}

@@ -1,0 +1,188 @@
+.container {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
+.disabledScrollbar {
+    overflow: hidden;
+}
+
+.navigateLink {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 16px;
+
+    .text {
+        color: rgb(58, 58, 58);
+        text-decoration: underline 1px solid rgb(0, 0, 0);
+        text-underline-offset: 2px;
+        transition: text-decoration-color 0.2s;
+    }
+}
+
+.navigateLink:hover {
+    cursor: pointer;
+}
+
+.text:hover {
+    text-decoration: underline 1px solid rgb(255, 255, 255);
+}
+
+.imgAndOrder {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 250px;
+}
+
+.left {
+    flex: 4.5;
+}
+
+.right {
+    flex: 4.5;
+}
+
+.title {
+    margin-top: 15px;
+}
+
+.imgPart {
+    width: 100%;
+    top: 0;
+    position: sticky;
+}
+
+.productDescription {
+    margin-top: 100px;
+}
+
+.price {
+    display: flex;
+    flex-direction: row-reverse;
+    h1 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+.numReviewsAndSorting {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    margin-top: 30px;
+}
+
+.listReviews {
+    list-style: none;
+    padding: 0; 
+    margin: 0;  
+    overflow: hidden; 
+}
+
+.listReviews li {
+    margin-bottom: 20px;
+}
+
+.reviewsWrapper {
+    margin-top: 40px;
+}
+
+.expandButton {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 110px;
+    border-radius: 10px;
+}
+
+.expandButton:active {
+    background-color: lightgray;
+}
+
+.addReviews {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+
+.reviewButtonWrapper {
+    /* margin: 10px 15px; */
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.reviewButtonWrapper:hover {
+    background-color: rgb(85, 84, 84);
+}
+
+.noScroll {
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.reviewStatisticOverview {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    h2 {
+        font-size: 30px;
+        font-style: italic;
+    }
+    p {
+        font-weight: bold;
+    }
+}
+
+.addToCartButton {
+    position: sticky;
+    bottom: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid lightgray;
+    background-color: white;
+}
+
+.priceTag {
+    margin-top: 10px;
+    h3 {
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+    }
+}
+
+.addToCartButtonWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    background-color: rgb(220, 3, 3);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 400px;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-right: 15px;
+}
+
+.addToCartButtonWrapper:hover {
+    background-color: rgb(170, 0, 0);
+}

@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    height: 400px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.contentDiv {
+    padding-left: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-left: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    width: 35%;
+    color: black;
+}
+
+.imgDiv {
+    height: 100%;
+    width: 65%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: yellow;
+    img {
+        object-fit: cover;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+.topHalf {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 45%;
+}
+
+.topHalf :nth-child(2) {
+    font-weight: bold;
+}
+
+.bottomHalf {
+    display: flex;
+    gap: 20px;
+}
+
+.bottomHalf >* {
+    border: 1px solid lightgray;
+}
+
+.a {
+    text-decoration: none;
+    width: 100%;
+}
+
+.pillWrapper {
+    width: 60px;
+}

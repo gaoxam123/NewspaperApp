@@ -1,0 +1,10 @@
+.container {
+    height: 25px;
+    border-radius: 25px;
+    padding: 8px;
+    border: 1.5px solid red;
+    font-size: 11.5px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}

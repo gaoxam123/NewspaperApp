@@ -1,8 +1,8 @@
-import TopProduct from "../TopProduct/TopProduct"
 import classes from "./TopProductsSection.module.css"
 import { useState, useRef } from "react"
+import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 
-export default function TopProductsSection({ title, totalProducts }) {
+export default function TopProductsSection({ title, totalProducts, TopProduct, slideLength = 1300 }) {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
   const totalTopProducts = totalProducts
@@ -12,13 +12,13 @@ export default function TopProductsSection({ title, totalProducts }) {
   const handleClickRight = () => {
     console.log(listRef.current)
     if (listRef.current) {
-      listRef.current.scrollLeft += 1300; // Cuộn sang phải 500px
+      listRef.current.scrollLeft += slideLength;
     }
   };
 
   const handleClickLeft = () => {
     if (listRef.current) {
-      listRef.current.scrollLeft -= 1300; // Cuộn sang phải 500px
+      listRef.current.scrollLeft -= slideLength;
     }
   };
 
@@ -36,10 +36,10 @@ export default function TopProductsSection({ title, totalProducts }) {
       <div className={classes.titleAndButtons}>
         <div className={classes.title}><h2>{title}</h2></div>
         <div className={classes.buttons}>
-          <button onClick={handleClickRight}
-            disabled={!showRightArrow}>Right</button>
-          <button onClick={handleClickLeft}
-            disabled={!showLeftArrow}>Left</button>
+          <button className={classes.button} onClick={handleClickRight}
+            disabled={!showRightArrow}><KeyboardArrowRight sx={{ fontSize: '18px', color: !showRightArrow ? 'black' : 'white' }} /></button>
+          <button className={classes.button} onClick={handleClickLeft}
+            disabled={!showLeftArrow}><KeyboardArrowLeft sx={{ fontSize: '18px', color: !showLeftArrow ? 'black' : 'white' }} /></button>
         </div>
       </div>
       <div className={classes.topProducts}>
