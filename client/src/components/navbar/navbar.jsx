@@ -5,7 +5,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
 import { IconButton, Button } from "@mui/material"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Link } from "react-router-dom"
 import MenuSidebar from "../sidebar/menu/MenuSidebar"
 import AccountSidebar from "../sidebar/account/AccountSidebar"
@@ -37,6 +37,10 @@ export default function Navbar() {
       setShowRightArrow(listRef.current.scrollLeft + listRef.current.clientWidth < listRef.current.scrollWidth - 1);
     }
   }
+
+  useEffect(() => {
+    setShowRightArrow(true)
+  }, [])
 
   const [menuSidebar, setMenuSidebar] = useState(false)
   function handleMenuClick() {

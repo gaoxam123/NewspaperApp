@@ -34,7 +34,6 @@
     white-space: nowrap;
     position: relative;
     scroll-behavior: smooth;
-    white-space: nowrap;
 }
 
 .category-list::-webkit-scrollbar {
