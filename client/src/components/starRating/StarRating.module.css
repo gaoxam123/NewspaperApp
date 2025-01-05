@@ -1,0 +1,34 @@
+.rating {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    color: red;
+    justify-content: space-between;
+    font-size: 14px;
+    padding-top: 4px;
+    /* Star color */
+}
+
+.reviews {
+    margin-left: 8px;
+    color: #666;
+}
+
+.separator {
+    color: #666;
+}
+
+.typeNumber {
+    color: #666;
+}
+
+.brand {
+    color: #666;
+}

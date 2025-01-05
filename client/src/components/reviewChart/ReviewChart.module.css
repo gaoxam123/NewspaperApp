@@ -1,0 +1,38 @@
+.ratingBars {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.barRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.starLabel {
+    width: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-right: 16px;
+}
+
+.barWrapper {
+    flex: 1;
+    height: 8px;
+    background-color: #e0e0e0;
+    margin: 0 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.barFill {
+    height: 100%;
+    background-color: black;
+}
+
+.countLabel {
+    font-size: 14px;
+    color: gray;
+}

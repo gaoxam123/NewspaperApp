@@ -1,0 +1,175 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-radius: 20px;
+    display: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    max-height: 800px;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+dialog[open] {
+    display: block;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 23px;
+    background-color: white;
+}
+
+.desc {
+    padding: 20px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 20%;
+    }
+}
+
+.starRating {
+    padding: 20px;
+}
+
+.starRatingTitle {
+    font-size: 20px;
+}
+
+.starRatingInstruction {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.closeButton {
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+}
+
+.button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+.ratingForm {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ratingFormTitleAndInstructions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.ratingFormTitle {
+    font-size: 20px;
+}
+
+.inputWrapper {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.title {
+    border: none;
+    height: 40px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.title:focus {
+    border: none;
+    outline: none;
+}
+
+.textareaWrapper {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.content {
+    border: none;
+    height: 100px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.content:focus {
+    border: none;
+    outline: none;
+}
+
+.redBorder {
+    border-color: red;
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    gap: 20px;
+}
+
+.submitButton {
+    width: 100%;
+    margin-top: 70px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: rgb(85, 84, 84);
+}
+
+.footer {
+    /* position: sticky; */
+    bottom: 0;
+    height: 15px;
+    background-color: white;
+}

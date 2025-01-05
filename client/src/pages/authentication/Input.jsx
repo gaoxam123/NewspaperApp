@@ -1,14 +1,14 @@
-export default function Input({ id, error, icon, ...props }) {
+export default function Input({ containerClass = "input-container", wrapperClass = "input-wrapper", errorClass = "control-error", componentType, id, error, icon = "", ...props }) {
+    const ComponentType = componentType
     return (
-        <div className="input-container">
-            <div className="input-wrapper">
+        <div className={containerClass}>
+            <div className={wrapperClass}>
                 <label htmlFor={id}>{icon}</label>
-                <input
+                <ComponentType
                     {...props}
-                    className={id}
                     id={id} />
             </div>
-            <div className="control-error">{error && <p>{error}</p>}</div>
+            <div className={errorClass}>{error && <p>{error}</p>}</div>
         </div>
     )
 }

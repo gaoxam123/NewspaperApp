@@ -5,6 +5,8 @@ import ListProducts from './pages/listProducts/ListProducts'
 import Layout from './components/layout/Layout'
 import RegisterLogin from './pages/authentication/RegisterLogin'
 import Auth from './components/auth/Auth'
+import SingleProduct from './pages/singleProduct/SingleProduct'
+import ShoppingCart from './pages/shoppingCart/ShoppingCart'
 
 const router = createBrowserRouter([
   {
@@ -17,8 +19,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/products",
-        element: <ListProducts />
+        element: <SingleProduct />,
       },
+      {
+        path: "/products/:id",
+        element: <SingleProduct />
+      },
+      {
+        path: "checkout",
+        element: <ShoppingCart />
+      }
     ]
   },
   {
@@ -31,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <RegisterLogin login={true}/>
+        element: <RegisterLogin login={true} />
       }
     ]
   },
@@ -45,7 +55,7 @@ function App() {
     //     <Route path='/products' element={<ListProducts />} />
     //   </Routes>
     // </BrowserRouter>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   )
 }
 

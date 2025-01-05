@@ -8,6 +8,10 @@
     background-color: #f9f9f9;
 }
 
+.container:hover {
+    cursor: pointer;
+}
+
 .imgDiv {
     flex: 4.5;
     height: 60%;
